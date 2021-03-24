@@ -23,9 +23,40 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
 
 
+const validateCred= arr =>{
+    let doubleIt = true;
+    let sum = 0;
+    for(let i = arr.length -2; i >=0; i --){
+        if(doubleIt){
+            let doubled = arr[i] *2;
+            if(doubled >9){
+                doubled -= 9
+            }
+            sum += doubled;
+        }
+        else {
+            sum +=arr[i]
+        }
+        doubleIt = !doubleIt;
+    }
 
+    sum += arr[arr.length-1];
+    if(sum % 10 === 0){
+        console.log('valid');
+        return true;
+    }else{
+        console.log('invalid');
+        return false
+    };
 
+   
+    
 
+}
+
+console.log(validateCred(valid1));
+
+ console.log(validateCred(invalid1));
 
 
 
