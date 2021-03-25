@@ -48,16 +48,28 @@ const validateCred= arr =>{
         console.log('invalid');
         return false
     };
-
-   
-    
-
 }
 
-console.log(validateCred(valid1));
+function findInvalidCards(array){
+    let invalidNums = [];
+    for(let i = 0; i < array.length; i++){
+        if (!validateCred(array[i])){
+            invalidNums.push(array[i]);
+        }
+       } 
+        return invalidNums;
+    }
+  
 
- console.log(validateCred(invalid1));
 
+
+// console.log(validateCred(valid1));
+
+//  console.log(validateCred(invalid1));
+ console.log(findInvalidCards(batch));
+ 
+
+ 
 
 
 
