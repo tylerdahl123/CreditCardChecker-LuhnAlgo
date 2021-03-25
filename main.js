@@ -60,7 +60,21 @@ function findInvalidCards(array){
         return invalidNums;
     }
   
-
+function idInvalidCardCompanies(array){
+    switch(firstDigit){
+        case 3:
+            return 'Amex';
+            break;
+        case 4:
+            return 'Visa';
+            break;
+        case 5: 
+            return 'Mastercard';
+            break;
+        case 6:
+                return 'Discover';
+    }
+}
 
 
 // console.log(validateCred(valid1));
