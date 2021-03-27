@@ -61,7 +61,10 @@ function findInvalidCards(array){
     }
   
 function idInvalidCardCompanies(array){
-    switch(firstDigit){
+    let invalidCompanies = [];
+    for (let j= 0; j < array.length; j++){
+        if (!validateCred(array[j])){
+    switch(array[j]){
         case 3:
             return 'Amex';
             break;
@@ -73,7 +76,15 @@ function idInvalidCardCompanies(array){
             break;
         case 6:
                 return 'Discover';
+                break;
+        default: 
+        return 'company not found';
+        break;
     }
+    invalidCompanies.push(array[j])
+}
+}
+return invalidCompanies;
 }
 
 
